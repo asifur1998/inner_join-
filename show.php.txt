@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>show</title>
+</head>
+<body>
+<table border="1 px solid">
+	<tr>
+		<th>Buyer Name</th>
+		<th>Buyer Address</th>
+		<th>Buyer Phone</th>
+		<th>Customer Name</th>
+		<th>Customer Address</th>
+		<th>Customer Phone</th>
+	</tr>
+	<?php
+
+include('connection.php');
+// buyer table 
+//$display = " SELECT * FROM buyer";
+
+//inser join 
+$inner = "SELECT buyer.b_name,buyer.b_address,buyer.b_phone,customer.c_name,customer.c_address,customer.c_phone FROM buyer INNER JOIN customer ON buyer.id = customer.customer_id";
+
+$show = mysqli_query($connect,$inner);
+while($row=mysqli_fetch_array($show)){
+	 ?>
+	<tr>
+		<td> <?php echo $row['b_name']?> </td>
+		<td> <?php echo $row['b_address']?> </td>
+		<td> <?php echo $row['b_phone']?> </td>
+		<td> <?php echo $row['c_name']?>  </td>
+		<td> <?php echo $row['c_address']?>  </td>
+		<td> <?php echo $row['c_phone']?>  </td>
+		
+	</tr>
+	 <?php
+}
+	?>
+</table>
+</body>
+</html>

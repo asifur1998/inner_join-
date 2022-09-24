@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>insert_cu</title>
+</head>
+<body>
+<form action="insert_buyer.php"method="post">
+<input type="text"name="b_name"placeholder="buyer_name">
+<br/>
+<input type="text"name="b_address"placeholder="buyer_address">
+<br/>
+<input type="number"name="b_phone"placeholder="buyer_phone"min="1">
+<br/>
+<input type="number"name="customer_id"placeholder="customer_id"min="1">
+<br/>
+<input type="submit"name="submit">
+</form>
+</body>
+</html>

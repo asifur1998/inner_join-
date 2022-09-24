@@ -1,0 +1,25 @@
+<?php
+
+include('connection.php');
+
+if (isset($_POST['submit'])){
+	$b_name = $_POST['b_name'];
+	$b_address = $_POST['b_address'];
+	$b_phone = $_POST['b_phone'];
+	$customer_id = $_POST['customer_id'];
+
+
+	
+		$insertQuery = "INSERT INTO buyer (b_name,b_address,b_phone,customer_id) VALUES ('$b_name','$b_address','$b_phone','$customer_id')";
+
+		$insert = mysqli_query($connect,$insertQuery);
+
+		if($insert == true){
+			echo "buyer data insert";
+		}else{
+			echo "buyer data not insert";
+		}
+	}
+	
+
+?>
